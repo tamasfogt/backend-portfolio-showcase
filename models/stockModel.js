@@ -1,18 +1,28 @@
 const mongoose = require("mongoose");
 
 const stockSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
   symbol: {
     type: String,
     required: true,
   },
   avgPrice: {
     type: Number,
+    default: 0,
   },
   quantity: {
     type: Number,
+    default: 0,
   },
   note: {
     type: String,
+  },
+  userId: {
+    type: String,
+    required: true,
   },
   lots: [
     {
